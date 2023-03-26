@@ -1,29 +1,35 @@
 # Twitter-Scraping
 
-This project provides a Python-based web application (Graphical User Interface) to search and scrape tweets from Twitter, based on specific keywords or hashtags, and within a date range. The scraped data can be saved to a MongoDB database or downloaded as CSV or JSON files.
-
-Getting started
-
-Prerequisites:
-
-Before running the application, you need to have the following installed:
-Python 3
-pip
-streamlit
-pymongo
-snscrape
+This Python script allows you to scrape Twitter data based on a keyword or hashtag, a start date, an end date, and the number of tweets you want to scrape. The scraped data is stored in a MongoDB database and can also be downloaded as a CSV or JSON file.
 
 Installation:
 
+To run this script, you need to install the following packages:
+pandas
+snscrape
+pymongo
+json
+base64
+streamlit
 You can install the required packages using the following command:
 pip install -r requirements.txt
 
 Usage:
 
-You can run the application locally by running the following command in your terminal:
-streamlit run app.py
-This will start a Streamlit server that you can access on your web browser at http://localhost:8501.
-Once you access the application, you can select the type of data you want to search (keyword or hashtag), enter the keyword/hashtag, select the date range, and choose how many tweets to scrape. You can then upload the scraped data to a MongoDB database or download it as a CSV or JSON file.
+To run the script, simply execute the Twitter_Scraping.py file in your Python environment.
+
+The script will open a Streamlit app in your browser, where you can enter the search parameters:
+
+* Select the type of data you want to search for (keyword or hashtag) using the dropdown menu.
+* Enter the keyword or hashtag you want to search for in the text box.
+* Select the start and end dates using the date picker.
+* Use the slider to select the number of tweets you want to scrape.
+* Once you have entered your search parameters, click the "Upload to MongoDB" button to upload the scraped data to a MongoDB database. You can also download the    scraped data as a CSV or JSON file using the corresponding download buttons.
+
+Functionality:
+
+The script uses the snscrape library to scrape Twitter data. The scraped data is stored in a pandas DataFrame and then uploaded to a MongoDB database using the PyMongo library.
+The Streamlit library is used to create a simple user interface for the script. The user interface allows the user to enter the search parameters and view the scraped data.
 
 Contributing:
 
